@@ -69,7 +69,7 @@ func buildSummary(s model.Summary) []byte {
 }
 
 func buildErrors(errs []model.LineError) []byte {
-	sorted := make([]model.LineError, 0, len(errs))
+	sorted := make([]model.LineError, len(errs))
 	copy(sorted, errs)
 	sort.SliceStable(sorted, func(i, j int) bool {
 		return sorted[i].LineNumber < sorted[j].LineNumber
